@@ -1,6 +1,6 @@
 # AI Weekly Business Review
 
-An AI analyst that writes the weekly sales review for a 45-store retailer: what happened, whether it matters, and what to watch next week. Built in Python with the Claude API on public Walmart sales data.
+An AI analyst that writes the weekly sales review (what happened, whether it matters, and what to watch next week), built on [Walmart's public store sales dataset](https://huggingface.co/datasets/large-traversaal/Walmart-sales): 45 stores, Feb 2010 – Oct 2012, originally released for a Kaggle forecasting competition. It's a portfolio project on public data, not client work. Built in Python with the Claude API.
 
 > 🦃 **Week ending 25 Nov 2011:** Holiday-week sales of $66.6M, up 1.2% (+$0.8M) on last year. Holiday-week sales were up 1.2% on last year, within 2 points of the recent 3.1% trend, and the 43% jump from last week reflects the holiday peak.
 
