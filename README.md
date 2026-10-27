@@ -1,4 +1,3 @@
-# ai-weekly-business-review
 # AI Weekly Business Review
 
 An AI-written weekly sales review for a 45-store retail chain. Every week it produces a short, plain-English brief that covers what happened, whether it matters, and what to keep an eye on next week. It's built in Python on public Walmart sales data, with the Claude API writing the commentary.
