@@ -99,11 +99,11 @@ Ground rules in the prompt: use only the numbers provided, never invent causes (
 - **Length check:** does each summary stay within the limit for its label?
 - **Grounding check:** every $ figure, % figure and "N of 45 stores" count in each brief is compared with the numbers Claude was given, allowing for rounding. Anything that doesn't match is listed for a person to check.
 
-A match confirms a number exists in the data. It doesn't prove the number is attached to the right store or department, or points in the right direction. That still needs a quick manual spot-check, which `weekly_drivers.csv` makes easy.
+A match confirms a number exists in the data. It doesn't prove the number is attached to the right store or department, or points in the right direction. That still needs a quick manual spot-check, which the drivers file makes easy.
 
 ## The output files
 
-### `weekly_business_review.csv`: one row per week
+### `weekly_business_review_*.csv`: one row per week
 
 | Field | Meaning |
 |---|---|
@@ -130,10 +130,10 @@ A match confirms a number exists in the data. It doesn't prove the number is att
 | `key_drivers` | The stores, store types or departments behind the result |
 | `watch_next_week` | One thing to keep an eye on |
 | `parse_status` | Whether Claude's reply was read cleanly (`ok`) |
-| `summary_sentences`, `length_ok` | Added by the length check |
-| `figures_cited`, `figures_matched`, `unmatched_figures` | Added by the grounding check |
+| `summary_sentences`, `length_ok` | Added by the length check (Step 12 of the notebook) |
+| `figures_cited`, `figures_matched`, `unmatched_figures` | Added by the grounding check (Step 12 of the notebook) |
 
-### `weekly_drivers.csv`: the detail behind each brief
+### `weekly_drivers_*.csv`: the detail behind each brief
 
 | Field | Meaning |
 |---|---|
@@ -162,9 +162,11 @@ Store and department rows are the top 5 movers against last year each week, not 
 | File | What it is |
 |---|---|
 | `ai_weekly_business_review.ipynb` | The notebook: data, comparisons, prompts, briefs and checks |
-| `weekly_business_review.csv` | Sample output: weekly briefs alongside their numbers |
-| `weekly_drivers.csv` | Sample output: the store and department detail behind each brief |
-| `sales_vs_last_year.png` | Weekly sales vs the same week last year, with holiday weeks marked |
+| `weekly_business_review_dev.csv` | Weekly briefs alongside their numbers, Oct–Dec 2011 (development quarter) |
+| `weekly_business_review_test.csv` | Weekly briefs alongside their numbers, Jul–Sep 2012 (held-out test quarter) |
+| `weekly_drivers_dev.csv` / `weekly_drivers_test.csv` | The store and department detail behind each brief, for each quarter |
+
+When you run the notebook yourself, it saves these as `weekly_business_review.csv` and `weekly_drivers.csv`. The field descriptions below apply to both quarters.
 
 ## Limitations
 
